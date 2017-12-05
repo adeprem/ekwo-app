@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+@import "../fonts/icomoon/style";
+@import "style.min";
+@import "styles-merged";
+@import "style";
+
+@import "font-awesome-sprockets";
+@import "font-awesome";

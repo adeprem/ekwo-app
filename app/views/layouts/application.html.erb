@@ -6,8 +6,16 @@
   <meta name="description" content="EKWO, l'app au galop">
   <meta name="keywords" content="equitation, entrainements, entrainements d'équitation, galop, chevaux, soin des chevaux, application d'équitation, application pour s'occuper de ses chevaux">
 
-  <link rel="stylesheet" href="css/styles-merged.css">
-  <link rel="stylesheet" href="css/style.min.css">
+
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <link rel="stylesheet" href="../../assets/stylesheets/styles-merged.css">
+  <link rel="stylesheet" href="../../assets/stylesheets/style.css">
+  <link rel="stylesheet" href="../../assets/stylesheets/style.min.css">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
@@ -29,7 +37,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html" title="EKWO"><img src="img/Ekwo_Icon_Small.png" alt="logo EKWO"></a>
+
+          <a class="navbar-brand" href="index.html" title="EKWO"><%= image_tag "Ekwo_Icon_Small.png"%></a>
         </div>
 
         <div id="navbar-collapse" class="navbar-collapse collapse">
@@ -43,7 +52,7 @@
       </div>
     </nav>
 
-    <section class="probootstrap-hero prohttp://localhost/probootstrap/frame/#featuresbootstrap-slant" style="background-image: url(img/background-image2.jpg); background-position: 0px -10000px;" data-section="home" data-stellar-background-ratio="0.5">
+    <section class="probootstrap-hero prohttp://localhost/probootstrap/frame/#featuresbootstrap-slant" style="background-image: url(<%= image_path 'background-image2.jpg'%>); background-position: 0px -10000px;" data-section="home" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row intro-text">
           <div class="col-sm-12 col-md-12 text-center">
@@ -52,31 +61,40 @@
               <a href="https://dgpourpre.wixsite.com/digitalepourpre" target="_blank">En savoir plus</a> </p>
 
               <div class="AppStore">
-                <a href="http://appstore.com/ekwo" target="_blank"><img src="img/appstore.png" alt="appstore" height="100" width="300"></a>
+                <a href="http://appstore.com/ekwo" target="_blank"><%= image_tag "appstore.png", height: 100, width: 300, alt: "appstore"%></a>
+
               </div>
               <div class="GoogleStore">
-                <a href="https://play.google.com/store/apps/details?id=com.DigitalePourpre.ekwo" target="_blank"><img src="img/googleplay.png" alt="Google Store" height="100" width="300" ></a>
+                <a href="https://play.google.com/store/apps/details?id=com.DigitalePourpre.ekwo" target="_blank"><%= image_tag "googleplay.png", height: 100, width: 300, alt: "Google Play"%></a>
 
               </div>
             </div>
           </div>
         </div>
       </section>
+      <section class="announcement">
+        <div class="container">
 
+          <div class="row">
+            <h2 class="text-primary probootstrap-heading-2">Coming soon - Version 2.0</h2>
+            <p>La Version 2 arrive bientôt! Vous aurez accès à plus de 50 nouveaux exercices en audio-guidage, même plus besoin de sortir le téléphone de votre poche! Egalement, une nouvelle catégorie d'entraînement est à venir, et la fonction randonnée sera améliorée. Ainsi que plein d'autre nouveautés!</p>
+          </div>
+        </div>
+      </section>
       <section class="probootstrap-section">
         <div class="container">
           <div class="row">
             <div class="col-sm-12 col-md-4 text-center">
-              <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
-                <img src="img/CALENDRIER.jpg" alt="image agenda">
+              <div class="probootstrap-service-item">
+                <%= image_tag "CALENDRIER.jpg", alt: "Image Agenda"%>
                 <h2>Calendrier</h2>
                 <p>Enregistrez vos prévisions de randonnées, d'entraînements, ou de soins, et écrivez des notes pour vous rappeler de prendre un rendez-vous par exemple. Visualisation facile de vos obligations a venir dans le mois.</p>
               </div>
             </div>
 
             <div class="col-sm-12 col-md-4 text-center">
-              <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
-                <img src="img/ENTRAINEMENT.jpg" alt="image entrainement">
+              <div class="probootstrap-service-item">
+                <%= image_tag "ENTRAINEMENT.jpg", alt: "Image Entrainement"%>
                 <h2>Entraînements</h2>
                 <p>"Vous avez un accès illimité à plus de 75 entraînements.
                   Créez un planning d'entraînement personnalisé pour votre cheval
@@ -86,8 +104,8 @@
               </div>
             </div>
             <div class="col-sm-12 col-md-4 text-center">
-              <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
-                <img src="img/RECHERCHER.jpg" alt="image recherche">
+              <div class="probootstrap-service-item">
+                <%= image_tag "RECHERCHER.jpg", alt: "Image Recherche"%>
                 <h2>Autour de moi</h2>
                 <p>Trouvez des professionnels autour de vous et partout en France grâce à un système de recherche simplifié.
                 Professionnels de santé: Vétérinaires Equins, Dentistes Equins, Maréchaux-ferrants mais aussi des selleries, des centres équestres agrées FFE ou encore des éleveurs de chevaux ou poneys.  </p>
@@ -96,16 +114,16 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-6 text-center">
-              <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
-                <img src="img/RANDONNEE.jpg" alt="image randonnée">
+              <div class="probootstrap-service-item">
+                <%= image_tag "RANDONNEE.jpg", alt: "Image Randonnée"%>
                 <h2>Randonnées</h2>
                 <p>Selectionnez votre cheval et commencez la randonnée
                 L'appli enregistre la distance, la durée et la vitesse moyenne de votre circuit. Vous pourrez prendre des photos tout au long de votre ballade, et elles pourront être géolocalisées.</p>
               </div>
             </div>
             <div class="col-sm-12 col-md-6 text-center">
-              <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
-                <img src="img/Icone Actu.jpg" alt="image actualité">
+              <div class="probootstrap-service-item">
+                <%= image_tag "Icone Actu.jpg", alt: "Image Actualités"%>
                 <h2>Actualités</h2>
                 <p>Vous pourrez découvrir l'actualité équine chaque jour, et filtrer selon vos interêts.</p>
               </div>
@@ -124,7 +142,7 @@
             <!-- END row -->
             <div class="row mb100">
               <div class="col-sm-12 col-md-8 col-md-pull-1 col-lg-8 col-lg-pull-2 probootstrap-animate fadeInUp probootstrap-animated">
-                <p><img src="img/agenda.PNG" alt="screenshot agenda" class="img-responsive probootstrap-shadow"></p>
+                <p><%= image_tag "agenda.PNG", alt: "screenshot agenda", class: "img-responsive probootstrap-shadow"%></p>
               </div>
               <div class="col-sm-12 col-md-4 col-md-pull-1 probootstrap-section-heading">
                 <h3 class="text-primary probootstrap-heading-2">Calendrier</h3>
@@ -145,7 +163,7 @@
             <div class="row mb100">
               <!-- <div class="col-md-8 col-md-pull-2"> -->
                 <div class="ccol-sm-11 col-md-8 col-lg-8 col-md-push-5 col-lg-push-6 probootstrap-animate fadeInUp probootstrap-animated">
-                  <p><img src="img/02_Ekwo_ActuListe.jpg" alt="screenshot actualité" class="img-responsive probootstrap-shadow"></p>
+                  <p><%= image_tag "02_Ekwo_ActuListe.jpg", alt: "screenshot actualité", class: "img-responsive probootstrap-shadow"%></p>
                 </div>
                 <!-- <div class="col-md-4 col-md-pull-1"> -->
                   <div class="col-sm-12 col-md-4 col-md-pull-8 probootstrap-section-heading">
@@ -168,7 +186,7 @@
 
                 <div class="row mb100">
                   <div class="col-sm-12 col-md-8 col-md-pull-1 col-lg-8 col-lg-pull-2 probootstrap-animate fadeInUp probootstrap-animated">
-                    <p><img src="img/26_Ekwo_Rando.jpg" alt="screenshot rando" class="img-responsive probootstrap-shadow"></p>
+                    <p><%= image_tag "26_Ekwo_Rando.jpg", alt: "screenshot rando", class: "img-responsive probootstrap-shadow"%></p>
                   </div>
                   <div class="col-md-4 col-md-pull-1 probootstrap-section-heading">
                     <h3 class="text-primary probootstrap-heading-2">Randonnée</h3>
@@ -184,7 +202,7 @@
                 <div class="row mb100">
                   <!-- <div class="col-md-8 col-md-pull-2"> -->
                     <div class="col-sm-11 col-md-8 col-lg-8 col-md-push-5 col-lg-push-6 probootstrap-animate fadeInUp probootstrap-animated">
-                      <p><img src="img/30_Ekwo_TrainingListe.jpg" alt="screenshot agenda" class="img-responsive probootstrap-shadow"></p>
+                      <p><%= image_tag "30_Ekwo_TrainingListe.jpg", alt: "screenshot entrainement", class: "img-responsive probootstrap-shadow"%></p>
                     </div>
                     <!-- <div class="col-md-4 col-md-pull-1"> -->
                       <div class="col-sm-12 col-md-4 col-md-pull-8 probootstrap-section-heading">
@@ -275,11 +293,10 @@
                         <h2 class="probootstrap-heading">Rejoignez notre réseau de passionnés d'équitation</h2>
                         <p class="probootstrap-sub-heading">Téléchargez EKWO, parce que vous avez tant à partager avec votre cheval. <br>Créez votre profil, enregistrez vos chevaux et commencez l'expérience</p>
                         <div class="AppStore">
-                          <a href="http://appstore.com/ekwo" target="_blank"><img src="img/appstore.png" alt="appstore" height="75" width="200"></a>
+                          <a href="http://appstore.com/ekwo" target="_blank"><%= image_tag "appstore.png", height: 75, width: 200, alt: "appstore"%></a>
                         </div>
                         <div class="GoogleStore">
-                          <a href="https://play.google.com/store/apps/details?id=com.DigitalePourpre.ekwo" target="_blank"><img src="img/googleplay.png" alt="Google Store" height="75" width="200" ></a>
-
+                          <a href="https://play.google.com/store/apps/details?id=com.DigitalePourpre.ekwo" target="_blank"><%= image_tag "googleplay.png", height: 75, width: 200, alt: "Google Play"%></a>
                         </div>
 
                       </div>
@@ -325,7 +342,7 @@
             <ul class="probootstrap-contact-details">
               <li>
                 <span class="text-uppercase">Reseaux sociaux</span>
-                 <p class="probootstrap-social"><a target="_blank" href="https://www.facebook.com/Ekwo-433542957026834/?ref=br_rs"><i class="icon-facebook2"></i></a> <a target="_blank" href="https://twitter.com/DGPourpre"><i class="icon-twitter2"></i></a><a target="_blank" href="https://www.instagram.com/ekwo_app_au_galop/"><i class="icon-instagram2"></i></a></p>
+                <p class="probootstrap-social"><a target="_blank" href="https://www.facebook.com/Ekwo-433542957026834/?ref=br_rs"><i class="icon-facebook2"></i></a> <a target="_blank" href="https://twitter.com/DGPourpre"><i class="icon-twitter2"></i></a><a target="_blank" href="https://www.instagram.com/ekwo_app_au_galop/"><i class="icon-instagram2"></i></a></p>
               </li>
               <li>
                 <span class="text-uppercase">email</span>
